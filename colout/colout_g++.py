@@ -43,8 +43,7 @@ def theme():
         # Highlight message start:
         #   path   file   ext     : line   :  col     …
         [ "(/.*?)/([^/:]+): (In .*)"+qo,
-          section,
-          "normal,normal,bold" ],
+          "227,227,227" ,"normal,bold,bold" ],
 
         [ "(/.*?)/([^/:]+): (At .*)",
           section,
@@ -56,7 +55,7 @@ def theme():
         #   path   file   ext     : line   :  col     …
         [ "(/.*?)/([^/:]+):([0-9]+):*([0-9]*)(.*)",
           "none,white,yellow,none,none",
-          "normal,normal,normal,normal" ],
+          "normal,bold,normal,normal" ],
 
         # source code in single quotes
         [ qo+"(.*?)"+qc, "Cpp", "monokai" ],
