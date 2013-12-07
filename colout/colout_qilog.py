@@ -1,13 +1,18 @@
 
 def theme():
+    subdued = "black" # e.g. 242
+    neutral = "white" # e.g. 117
+    info    = "white" # e.g. 117
+    error   = "red"   # e.g. 197
+    warning = "blue"  # e.g. 214
+
     return [
-        [ "^\[D\] ", "white", "bold" ],
-        [ "^\[V\] ", "white", "bold" ],
-        [ "^\[I\] ", "117", "bold" ],
-        [ "^\[W\] ", "214", "bold" ],
-        [ "^\[E\] ", "197", "bold" ],
-        [ "[0-9]+\.[0-9]+ [0-9]+ ([a-zA-Z]+): ", "229", "bold" ],
-        [ "[0-9]+\.[0-9]+ [0-9]+ ([a-zA-Z]+[.])*([a-zA-Z]+[.])([a-zA-Z]+): ", "230,230,229", "normal,normal,bold" ],
-	[ "([0-9]+\.[0-9]+) ([0-9]+) ", "242" ],
-        [ " (Registered Service) \"([a-zA-Z0-9]+)\" \(#[0-9]+\)", "white", "underline,bold" ]
+        [ "^\[D\] ", neutral, "bold" ],
+        [ "^\[V\] ", neutral, "bold" ],
+        [ "^\[I\] ", info, "bold" ],
+        [ "^\[W\] ", warning, "bold" ],
+        [ "^\[E\] ", error, "bold" ],
+        [ "[0-9]+\.[0-9]+ [0-9]+ ((?:[a-zA-Z]+[.])*[a-zA-Z]+): ", "Hash", "bold" ],
+        [ "([0-9]+\.[0-9]+) ([0-9]+) ", subdued ],
+        [ " (Registered Service) \"([a-zA-Z0-9]+)\" \(#[0-9]+\)", neutral, "underline,bold" ]
     ]
