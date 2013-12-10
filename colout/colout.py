@@ -333,9 +333,15 @@ def colorin(text, color="red", style="normal"):
         # filter out everything that does not seem to be necessary to interpret the string as a number
         # this permits to transform "[ 95%]" to "95" before number conversion,
         # and thus allows to color a group larger than the matched number
-        chars_in_numbers = "-+.,e"
+        chars_in_numbers = "-+.,e/"
         allowed = string.digits + chars_in_numbers
         nb = "".join([i for i in filter(allowed.__contains__, text)])
+
+        # transforms any ratio written in a fractional form (e.g. [ 9/15])
+        # to a value in [0, 100]
+        pos = nb.find("/")
+        if pos != -1:
+            nb = str(float(nb[0:pos])/float(nb[pos+1:])*100)
 
         # interpret as decimal
         try:
