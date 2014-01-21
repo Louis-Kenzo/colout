@@ -23,6 +23,7 @@ def theme():
         [ " Registered Service \"([a-zA-Z0-9]+)\" \(#[0-9]+\)", neutral, "bold" ],
         [ "#[0-9]+", numbering ],
         [ "(/(?:[^/]+/)+)([^/]+\.[a-zA-Z0-9]+)", absolute_filename, "normal,bold" ],
+        [ "^(tail\:) \S+\: (file truncated)", "white", "reverse"],
         [ "\s[0-9]+[\s$]", number],
         [ "(?:[a-z]+\://)([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)(?:\:[0-9+])", ip, "bold"],
         [ "([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}\:[0-9]{2})(\:[0-9]{2}) ([A-Z]+(?:[+-][0-9]{1,2})?)", time, "normal,bold,normal"]
