@@ -4,16 +4,16 @@ def theme():
     informative="cyan"     # e.g. 117
     choice="magenta"       # e.g. 135
     error="red"            # e.g. 197
-    warning="yellow"       # e.g. 214
-    section_label="yellow" # e.g. 214
+    warning="blue"         # e.g. 214
+    section_label="blue"   # e.g. 214
     section_title="green"  # e.g. 154
-    second_class_object="blue" # e.g. 230
+    second_class_object="yellow" # e.g. 230
     first_class_object="green" # e.g. 154
 
     return [
         # qibuild configure
         [ "^(Current build worktree:) (.*/)([^/]+)$", ",".join([section_label,section_title,section_title]), "normal,normal,bold" ],
-        [ "^(Using toolchain:) (.*)$", ",".join([section_label,section_title]), "normal,bold" ],
+        [ "^(Using (?:toolchain|profile):) (.*)$", ",".join([section_label,section_title]), "normal,bold" ],
         [ "^(Build type:) (.*)$", ",".join([section_label,section_title]), "normal,bold" ],
         [ "^(\* \( *[0-9]+/[0-9]+\)) (Configuring) (.*)", ",".join(["red", section_label,section_title]), "bold,bold,bold" ],
         # qibuild warning
